@@ -1,0 +1,26 @@
+h1 {
+  text-align: center;
+  top: 600px;
+}
+
+.input{
+  top: 200px;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
+  background-color:white;
+   
+}
+
+.buttonInput{
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
+}
+
