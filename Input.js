@@ -3,37 +3,36 @@ import './App.css';
 import {useState} from 'react';
 
 
-function AddWord() {
+function AddWord({handelInput}) {
     const [input, setInput] = useState('');
-    let wordList =[];
-  
+
     const handleChange = (e) => {
-      setInput(e.target.value);
-    };
-  
+        setInput(e.target.value);
+    };    
+      
     const handleClick = (e) => {
       e.preventDefault();
       if (input) {
-        wordList.push(input);
+        handelInput(input); 
         setInput('');
       }
     };
   
     return (
       <div>
-        <input
-          type="text"
-          className="input"
-          onChange={handleChange}
-          value={input}
-          placeholder="Type your words..."
+        <form onSubmit={handleClick}>
+        <input 
+             style={{
+              top: '200px',
+              color: 'pink'}}
+            type="text"
+            className="input"         
+            onChange={handleChange}
+            value={input}
+            placeholder="Type here.."
         />
-        <button onClick={handleClick}>Add Word</button>
-        <ul>
-          {wordList.map((word) => (
-            <li key={word}>{word}</li>
-          ))}
-        </ul>
+        <button>Add Word</button>
+        </form>
       </div>
     );
   }
