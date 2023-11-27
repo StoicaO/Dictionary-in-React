@@ -8,22 +8,25 @@ export default function MyApp(){
     const[words, setWord]= useState([]);
 
     const handleAddInput = (input) => {
-        setWord([...words, input]);
+    setWord([...words, input]);
     }
    
     return (
         <div>
             <h1>My dictionary!</h1>
             <hr />
-            <p>Save your words in dictionary!</p>
-            <AddWord handelInput={handleAddInput}/>
-            <SearchWord words={words}/>
-            <h3>Words from Dictionar:</h3>
-            <ul>
+            <p className="ex1">Save your words in dictionary!</p>
+           
+                <AddWord handelInput={handleAddInput}/>
+                <p className="ex1">Words from Dictionar:</p>
+                <ul>
                 {words.map((word) => (
                 <li key={word}>{word}</li>
-          ))}
-        </ul>
+                ))}
+            </ul>   
+                
+        
+            <SearchWord  words={words}/>
            
         </div>
     );
